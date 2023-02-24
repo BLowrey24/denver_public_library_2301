@@ -11,6 +11,7 @@ RSpec.describe Author do
     
     it 'has attributes' do
       expect(charlotte_bronte.name).to eq("Charlotte Bronte")
+      expect(charlotte_bronte.books).to eq([])
     end
   end
 end
