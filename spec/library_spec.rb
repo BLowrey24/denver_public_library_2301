@@ -16,4 +16,20 @@ RSpec.describe Library do
       expect(library.authors).to eq([])
     end
   end
+
+  describe '#add_author' do
+    let(:author) { Author.new({first_name: 'J.K.', last_name: 'Rowling'}) }
+
+    before do
+      harry_potter_1 = author.write('Harry Potter and the Philosopher Stone', '1997')
+      harry_potter_2 = author.write('Harry Potter and the Chamber of Secrets', '1998')
+    end
+
+    it 'adds a new author to the authors array and the authors books to the books array' do
+      library.add_author(author)
+
+      expect(library.authors).to eq([author])
+      expect(library.books).to eq([harry_potter_1, harry_potter_2])
+    end
+  end
 end
