@@ -11,9 +11,9 @@ RSpec.describe Library do
     end
 
     it 'has attributes' do
-      expect(.name).to eq("I Am a Libray")
-      expect(.books).to eq([])
-      expect(.authors).to eq([])
+      expect(library.name).to eq("I Am a Library")
+      expect(library.books).to eq([])
+      expect(library.authors).to eq([])
     end
   end
 end
