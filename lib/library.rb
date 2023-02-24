@@ -15,4 +15,11 @@ class Library
       |book| @books << book
     end
   end
+
+  def publication_time_frame_for(author)
+    author_books = author.books
+    start_year = author_books.min_by { |book| book.publication_year.to_i }.publication_year
+    end_year = author_books.max_by { |book| book.publication_year.to_i }.publication_year
+    { start: start_year, end: end_year }
+  end
 end

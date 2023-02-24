@@ -30,8 +30,8 @@ RSpec.describe Library do
   end
 
   describe '#publication_time_frame_for' do
-    it 'returns a hash with the key being the publication_year of the authors book and it goes in order' do
-      harry_potter_1 = author.write('Harry Potter and the Philosopher\'s Stone', '1997')
+    it 'returns a hash with the key being the publication_year of the authors book and it starts with the first year and ends with the last' do
+      harry_potter_1 = author.write('Harry Potter and the Philosophers Stone', '1997')
       harry_potter_2 = author.write('Harry Potter and the Chamber of Secrets', '1998')
       harry_potter_3 = author.write('Harry Potter and the Prisoner of Azkaban', '1999')
       harry_potter_4 = author.write('Harry Potter and the Goblet of Fire', '2000')
