@@ -28,4 +28,19 @@ RSpec.describe Library do
       expect(library.books).to eq([harry_potter_1, harry_potter_2])
     end
   end
+
+  describe '#publication_time_frame_for' do
+    it 'returns a hash with the key being the publication_year of the authors book and it goes in order' do
+      harry_potter_1 = author.write('Harry Potter and the Philosopher\'s Stone', '1997')
+      harry_potter_2 = author.write('Harry Potter and the Chamber of Secrets', '1998')
+      harry_potter_3 = author.write('Harry Potter and the Prisoner of Azkaban', '1999')
+      harry_potter_4 = author.write('Harry Potter and the Goblet of Fire', '2000')
+      harry_potter_5 = author.write('Harry Potter and the Order of Phoenix', '2003')
+      harry_potter_6 = author.write('Harry Potter and the Half-Blood Prince', '2005')
+      harry_potter_7 = author.write('Harry Potter and the Deathly Hallows', '2007')
+      library.add_author(author)
+
+      expect(library.publication_time_frame_for(author)).to eq({ start: '1997', end: '2007' })
+    end
+  end
 end
